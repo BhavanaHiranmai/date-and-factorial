@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Date and Factorial</title>
+  </head>
+
+  <body>
+    <script>
+      const displayDate = () => {
+        const time = new Date();
+        document.getElementById("text").value =
+          time.getMonth() + 1 + "/" + time.getDate() + "/" + time.getFullYear();
+      };
+
+      const handlefactorial = () => {
+        const n = parseInt(prompt("Enter a number to calculate its factorial"));
+        if (isNaN(n) || n < 0) {
+          alert("Please enter a valid non-negative number");
+          return;
+        }
+        let l = 1;
+        for (let i = 1; i <= n; i++) {
+          l *= i;
+        }
+        alert("Factorial is " + l);
+      };
+    </script>
+
+    <button onclick="displayDate()">Display Date</button>
+    <input type="text" id="text" placeholder="Date will appear here" readonly />
+
+
+
+    <button onclick="handlefactorial()">Calculate Factorial</button>
+
+  </body>
+</html>
